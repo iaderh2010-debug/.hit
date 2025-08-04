@@ -1,0 +1,50 @@
+{
+  "layout": [
+    {
+      "type": "level",
+      "nombre": "Nivel sin nombre",
+      "ip": "192.168.0.201",
+      "puerto": "502",
+      "direccion": "449153",
+      "barColor": "#3498db",
+      "maxValue": "200",
+      "minValue": "0",
+      "displayMode": "value",
+      "sourceType": "register",
+      "orientation": "vertical",
+      "wordSize": "1",
+      "posX": 740,
+      "posY": 126
+    },
+    {
+      "type": "button",
+      "nombre": "ON",
+      "ip": "192.168.0.201",
+      "puerto": "502",
+      "direccion": "16384",
+      "modo": "pulse",
+      "bgColor": "#1ba300",
+      "fontColor": "#ffffff",
+      "fontFamily": "Arial",
+      "width": "120",
+      "height": "40",
+      "posX": 222,
+      "posY": 195
+    },
+    {
+      "type": "button",
+      "nombre": "OFF",
+      "ip": "192.168.0.201",
+      "puerto": "502",
+      "direccion": "16385",
+      "modo": "pulse",
+      "bgColor": "#cf0c0c",
+      "fontColor": "#ffffff",
+      "fontFamily": "Arial",
+      "width": "120",
+      "height": "40",
+      "posX": 353,
+      "posY": 197
+    }
+  ]
+}

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Control de Bobinas</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <!-- ✅ Only ONE script here -->
+  <script src="/static/Scrip.js" defer></script>
+</head>
+<body data-edit-mode="true">
+
+  <!-- Sidebar Menu -->
+  <div id="menu">
+    <h3>Agregar botón</h3>
+    <div class="coil-item" draggable="true" data-type="button">Nuevo botón</div>
+    <div class="coil-item" draggable="true" data-type="indicator">Luz Indicadora</div>
+    <div class="coil-item" draggable="true" data-type="gauge">Medidor</div>
+    <div class="coil-item" draggable="true" data-type="level">Nivel</div>
+    
+    <button id="saveLayout" style="margin-top: 20px; width: 100%;">💾 Guardar Layout</button>
+  </div>
+
+  <!-- Main Workspace -->
+  <div style="display: flex; flex-direction: column; flex-grow: 1;">
+    <h2 style="margin-left: 20px;">Pushbuttons Modbus TCP</h2>
+    <div id="workspace"></div>
+    <div id="coilStatus">Estado: ...</div>
+  </div>
+
+  <!-- Modal Config Panel -->
+  <div id="configModal" class="modal">
+  <div class="modal-content">
+    <h3>Configurar elemento</h3>
+
+    <!-- Shared fields -->
+    <label>Nombre: <input type="text" id="cfgNombre" /></label><br />
+    <label>IP del PLC: <input type="text" id="cfgIP" value="192.168.0.201" /></label><br />
+    <label>Puerto: <input type="number" id="cfgPuerto" value="502" /></label><br />
+    <label>Dirección Modbus: <input type="number" id="cfgDireccion" value="8192" /></label><br />
+    <label>Modo:
+      <select id="cfgModo">
+        <option value="pulse">Pulse</option>
+        <option value="read">Read</option>
+      </select>
+    <label>Fuente de datos:<br>
+  <select id="cfgSourceType">
+    <option value="register">Registro (valor)</option>
+    <option value="bit">Bit (contador/estado)</option>
+  </select>
+  <label>Tamaño de palabra:<br>
+  <select id="cfgWordSize">
+    <option value="1">16 bits (1 palabra)</option>
+    <option value="2">32 bits (2 palabras)</option>
+  </select>
+    </label><br />
+
+    <!-- 🔵 Level-only fields -->
+    <div id="levelExtras" style="display: none; margin-top: 10px;">
+  <label>Color de la barra:<br />
+    <input type="color" id="cfgBarColor" value="#3498db" />
+  </label><br />
+  <label>Valor máximo (100%):<br />
+    <input type="number" id="cfgMaxValue" value="100" min="1" step="1" />
+  </label><br />
+  <label>Valor mínimo (0%):<br />
+    <input type="number" id="cfgMinValue" value="0" step="1" />
+  </label><br />
+  <label>Modo de visualización:<br />
+    <select id="cfgDisplayMode">
+      <option value="percentage">Porcentaje</option>
+      <option value="value">Valor</option>
+    </select>
+  </label><br />
+  <label>Orientación:<br>
+  <select id="cfgOrientation">
+    <option value="vertical">Vertical</option>
+    <option value="horizontal">Horizontal</option>
+  </select>
+</label>
+</div>
+ 
+
+    <!-- 🔘 Button-only fields -->
+    <div id="buttonExtras" style="display: none; margin-top: 10px;">
+      <label>Ancho del botón (px): <input type="number" id="cfgBtnWidth" min="50" max="600" value="120" /></label><br />
+      <label>Alto del botón (px): <input type="number" id="cfgBtnHeight" min="30" max="300" value="40" /></label><br />
+      <label>Color del botón: <input type="color" id="cfgBgColor" value="#3498db" /></label><br />
+      <label>Color del texto: <input type="color" id="cfgFontColor" value="#ffffff" /></label><br />
+      <label>Fuente:
+        <select id="cfgFontFamily">
+          <option value="Arial">Arial</option>
+          <option value="Verdana">Verdana</option>
+          <option value="Georgia">Georgia</option>
+          <option value="Courier New">Courier New</option>
+          <option value="Tahoma">Tahoma</option>
+        </select>
+      </label><br />
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="modal-buttons">
+      <button id="confirmConfig">✅ OK</button>
+      <button id="deleteButton">🗑️ Eliminar botón</button>
+      <button id="cancelConfig">❌ Cancelar</button>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
