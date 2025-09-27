@@ -1,0 +1,26 @@
+{
+  "tabs": [
+    {
+      "name": "Página 1",
+      "id": "tab-1754758242848",
+      "content": [
+        {
+          "id": "widget-1754758246788-9206",
+          "type": "button",
+          "nombre": "Botón sin nombre",
+          "ip": "192.168.0.201",
+          "puerto": "502",
+          "direccion": "8192",
+          "modo": "pulse",
+          "bgColor": "#3498db",
+          "fontColor": "#ffffff",
+          "fontFamily": "Arial",
+          "width": "120",
+          "height": "40",
+          "posX": 374,
+          "posY": 127
+        }
+      ]
+    }
+  ]
+}

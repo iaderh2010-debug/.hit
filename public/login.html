@@ -2,12 +2,13 @@
 <html>
 <head><title>Login</title></head>
 <body>
-  <h2>Iniciar Sesión</h2>
+  <h2>Iniciar Sesión como Diseñador</h2>
   <form method="POST" action="/login">
     <label>Usuario: <input type="text" name="username" required></label><br>
     <label>Contraseña: <input type="password" name="password" required></label><br>
-    <button type="submit">Entrar</button>
+    <button type="submit">Entrar como Diseñador</button>
   </form>
-  <a href="/signup.html">¿No tienes cuenta? Regístrate</a>
+  <a href="/signup.html">¿No tienes cuenta? Regístrate</a><br><br>
+  <button onclick="window.location.href='/loginuser.html'" type="button">Inicia Sesión como Usuario</button>
 </body>
 </html>

@@ -4,12 +4,29 @@ body {
   margin: 0;
   padding: 0;
   display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   height: 100vh;
   overflow: hidden;
 }
 
-h2 {
-  margin: 20px;
+/* Make tab bar horizontal and stick to top */
+.tab-bar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background: #f6f6f6;
+  padding: 8px 16px; /* You can reduce to 8px 12px if you want less space */
+  border-bottom: 1px solid #ddd;
+  gap: 8px;
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  min-width: 0;
+  flex-wrap: nowrap;
+  overflow-x: auto;
 }
 
 /* Sidebar menu */
@@ -19,6 +36,39 @@ h2 {
   padding: 20px;
   border-right: 2px solid #ccc;
   box-sizing: border-box;
+  height: calc(100vh - 56px); /* adjust for tab-bar height */
+  position: fixed;
+  top: 56px; /* height of tab-bar */
+  left: 0;
+  bottom: 0;
+  z-index: 2;
+}
+
+/* Workspace */
+#workspace {
+  flex-grow: 1;
+  position: relative;
+  margin-left: 200px; /* leave space for sidebar */
+  height: calc(100vh - 56px); /* adjust for tab-bar height */
+  overflow: hidden;
+  border: 1px solid #ccc;
+  width: auto;
+}
+
+/* Make sure h2 and coilStatus are also shifted */
+h2 {
+  margin-left: 220px;
+  margin-top: 16px;
+}
+
+#coilStatus {
+  margin-left: 200px;
+  width: calc(100vw - 200px);
+  padding: 20px;
+  font-weight: bold;
+  font-size: 18px;
+  background: #fff8e1;
+  border-top: 2px solid #ccc;
 }
 
 /* Coil menu items */
@@ -29,15 +79,6 @@ h2 {
   border-radius: 8px;
   cursor: grab;
   text-align: center;
-}
-
-/* Workspace */
-#workspace {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  border: 1px solid #ccc;
-  overflow: hidden;
 }
 
 /* Button blocks */
@@ -61,22 +102,10 @@ button {
   color: white;
   cursor: pointer;
   font-size: 16px;
-
-  /* Ensure transitions for dynamic styles */
   transition: background-color 0.3s, color 0.3s, font-family 0.3s;
 }
 
 /* Note: hover styles are set dynamically via JavaScript */
-
-/* Coil status bar */
-#coilStatus {
-  padding: 20px;
-  font-weight: bold;
-  font-size: 18px;
-  background: #fff8e1;
-  border-top: 2px solid #ccc;
-  width: 100%;
-}
 
 /* Indicator block */
 .indicator-block {
@@ -93,13 +122,13 @@ button {
 }
 
 .indicator-light {
-  width: 30px;
-  height: 30px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
-  background-color: grey;
-  border: 2px solid #333;
-  box-shadow: 0 0 5px #00000055;
-  transition: background-color 0.3s;
+  background: #888888;
+  margin: 8px auto;
+  border: 2px solid #444;
+  transition: background 0.2s;
 }
 
 .indicator-light.on {
@@ -121,16 +150,12 @@ button {
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.5);
-
   justify-content: center;
   align-items: center;
-
   transition: opacity 0.2s ease;
   opacity: 0;
   pointer-events: none;
 }
-
-/* Show modal class */
 .modal.show {
   opacity: 1;
   pointer-events: auto;
@@ -156,8 +181,21 @@ button {
 
 /* Config panel font */
 #positionsPanel {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #f4f4f4;
+  border-top: 1px solid #ccc;
   font-family: monospace;
+  height: 120px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  z-index: 5;
+  padding: 10px;
 }
+
+/* Gauge styles */
 .gauge {
   appearance: none;
   -webkit-appearance: none;
@@ -209,6 +247,24 @@ button {
   transition: stroke-dashoffset 0.3s ease;
 }
 
+.gauge-min-label, .gauge-max-label {
+  position: absolute;
+  top: 40px;
+  font-size: 12px;
+  color: #333;
+}
+.gauge-min-label { left: 0; }
+.gauge-max-label { right: 0; }
+.gauge-value-display {
+  position: absolute;
+  left: 50%;
+  top: 10px;
+  transform: translateX(-50%);
+  font-weight: bold;
+  font-size: 16px;
+}
+
+/* Level styles */
 .level-block {
   width: 60px;
   height: 200px;
@@ -331,4 +387,64 @@ button {
   transform: translateY(-100%);
   width: auto;
   text-align: left;
+}
+
+/* Tab styles */
+.tab-btn {
+  background: #3498db;
+  border: 1px solid #ccc;
+  border-radius: 8px 8px 0 0;
+  padding: 8px 18px;
+  margin-right: 2px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s;
+  flex-shrink: 0; /* <-- prevents shrinking */
+}
+.tab-btn.active {
+  background: #2a7bb1;
+  color: #fff;
+}
+.tab-new-btn {
+  background: #27ae60;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 14px;
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: 12px; /* <-- separates from right border */
+  white-space: nowrap;
+  max-width: 180px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-shrink: 0;
+}
+
+.modal-close {
+  position: absolute;
+  top: 12px; right: 16px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.vector-node-block {
+  position: absolute;
+  cursor: pointer;
+  user-select: none;
+  z-index: 10;
+}
+.vector-node-circle {
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+.vector-node-label {
+  font-size: 12px;
+  color: #333;
+  margin-top: 2px;
+  text-align: center;
+}
+.pipe-indicator-pipe {
+  height: 4px;
+  border-radius: 2px;
+  background-color: #888888;
+  margin: 8px 0;
 }

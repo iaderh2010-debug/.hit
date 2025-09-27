@@ -1,50 +1,108 @@
 {
-  "layout": [
+  "tabs": [
     {
-      "type": "level",
-      "nombre": "Nivel sin nombre",
-      "ip": "192.168.0.201",
-      "puerto": "502",
-      "direccion": "449153",
-      "barColor": "#3498db",
-      "maxValue": "200",
-      "minValue": "0",
-      "displayMode": "value",
-      "sourceType": "register",
-      "orientation": "vertical",
-      "wordSize": "1",
-      "posX": 740,
-      "posY": 126
+      "name": "Página 1",
+      "id": "tab-1754531185674",
+      "content": [
+        {
+          "id": "undefined",
+          "type": "level",
+          "nombre": "Thank 1",
+          "ip": "192.168.0.201",
+          "puerto": "502",
+          "direccion": "449153",
+          "barColor": "#d963d5",
+          "maxValue": "200",
+          "minValue": "0",
+          "displayMode": "percentage",
+          "sourceType": "register",
+          "orientation": "vertical",
+          "wordSize": "1",
+          "posX": 660,
+          "posY": 158
+        },
+        {
+          "id": "undefined",
+          "type": "button",
+          "nombre": "ON",
+          "ip": "192.168.0.201",
+          "puerto": "502",
+          "direccion": "16385",
+          "modo": "pulse",
+          "bgColor": "#1ba300",
+          "fontColor": "#ffffff",
+          "fontFamily": "Arial",
+          "width": "103",
+          "height": "50",
+          "posX": 243,
+          "posY": 209
+        },
+        {
+          "id": "undefined",
+          "type": "button",
+          "nombre": "OFF",
+          "ip": "192.168.0.201",
+          "puerto": "502",
+          "direccion": "16386",
+          "modo": "pulse",
+          "bgColor": "#cf0c0c",
+          "fontColor": "#ffffff",
+          "fontFamily": "Arial",
+          "width": "120",
+          "height": "40",
+          "posX": 384,
+          "posY": 210
+        },
+        {
+          "id": "undefined",
+          "type": "indicator",
+          "nombre": "Luz",
+          "ip": "192.168.0.201",
+          "puerto": "502",
+          "direccion": "8193",
+          "colorOn": "#44c93b",
+          "colorOff": "#949494",
+          "posX": 551,
+          "posY": 179
+        },
+        {
+          "id": "undefined",
+          "type": "gauge",
+          "nombre": "Temp",
+          "ip": "192.168.0.201",
+          "puerto": "502",
+          "direccion": "449153",
+          "gaugeColor": "#00d1e0",
+          "maxValue": "200",
+          "minValue": "0",
+          "displayMode": "value",
+          "wordSize": "2",
+          "posX": 794,
+          "posY": 231
+        }
+      ]
     },
     {
-      "type": "button",
-      "nombre": "ON",
-      "ip": "192.168.0.201",
-      "puerto": "502",
-      "direccion": "16384",
-      "modo": "pulse",
-      "bgColor": "#1ba300",
-      "fontColor": "#ffffff",
-      "fontFamily": "Arial",
-      "width": "120",
-      "height": "40",
-      "posX": 222,
-      "posY": 195
-    },
-    {
-      "type": "button",
-      "nombre": "OFF",
-      "ip": "192.168.0.201",
-      "puerto": "502",
-      "direccion": "16385",
-      "modo": "pulse",
-      "bgColor": "#cf0c0c",
-      "fontColor": "#ffffff",
-      "fontFamily": "Arial",
-      "width": "120",
-      "height": "40",
-      "posX": 353,
-      "posY": 197
+      "name": "123",
+      "id": "tab-1754590565032",
+      "content": [
+        {
+          "id": "widget-1754591796182-6833",
+          "type": "button",
+          "nombre": "ON",
+          "ip": "192.168.0.201",
+          "puerto": "502",
+          "direccion": "16385",
+          "modo": "pulse",
+          "bgColor": "#3498db",
+          "fontColor": "#ffffff",
+          "fontFamily": "Arial",
+          "width": "120",
+          "height": "40",
+          "posX": 156,
+          "posY": 106
+        }
+      ]
     }
   ]
 }

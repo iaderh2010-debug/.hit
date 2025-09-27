@@ -1,86 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title>Control de Bobinas</title>
-  <link rel="stylesheet" href="/static/style.css">
-  <!-- ✅ Only ONE script here -->
-  <script src="/static/Scrip.js" defer></script>
-</head>
-<body data-edit-mode="true">
-
-  <!-- Sidebar Menu -->
-  <div id="menu">
-    <h3>Agregar botón</h3>
-    <div class="coil-item" draggable="true" data-type="button">Nuevo botón</div>
-    <div class="coil-item" draggable="true" data-type="indicator">Luz Indicadora</div>
-    <div class="coil-item" draggable="true" data-type="gauge">Medidor</div>
-    <div class="coil-item" draggable="true" data-type="level">Nivel</div>
-    
-    <button id="saveLayout" style="margin-top: 20px; width: 100%;">💾 Guardar Layout</button>
-  </div>
-
-  <!-- Main Workspace -->
-  <div style="display: flex; flex-direction: column; flex-grow: 1;">
-    <h2 style="margin-left: 20px;">Pushbuttons Modbus TCP</h2>
-    <div id="workspace"></div>
-    <div id="coilStatus">Estado: ...</div>
-  </div>
-
-  <!-- Modal Config Panel -->
-  <div id="configModal" class="modal">
+</script>
+<!-- Config Modal for widgets -->
+<div id="configModal" class="modal">
   <div class="modal-content">
-    <h3>Configurar elemento</h3>
-
-    <!-- Shared fields -->
-    <label>Nombre: <input type="text" id="cfgNombre" /></label><br />
-    <label>IP del PLC: <input type="text" id="cfgIP" value="192.168.0.201" /></label><br />
-    <label>Puerto: <input type="number" id="cfgPuerto" value="502" /></label><br />
-    <label>Dirección Modbus: <input type="number" id="cfgDireccion" value="8192" /></label><br />
-    <label>Modo:
-      <select id="cfgModo">
-        <option value="pulse">Pulse</option>
-        <option value="read">Read</option>
-      </select>
-    <label>Fuente de datos:<br>
-  <select id="cfgSourceType">
-    <option value="register">Registro (valor)</option>
-    <option value="bit">Bit (contador/estado)</option>
-  </select>
-  <label>Tamaño de palabra:<br>
-  <select id="cfgWordSize">
-    <option value="1">16 bits (1 palabra)</option>
-    <option value="2">32 bits (2 palabras)</option>
-  </select>
-    </label><br />
-
-    <!-- 🔵 Level-only fields -->
-    <div id="levelExtras" style="display: none; margin-top: 10px;">
-  <label>Color de la barra:<br />
-    <input type="color" id="cfgBarColor" value="#3498db" />
-  </label><br />
-  <label>Valor máximo (100%):<br />
-    <input type="number" id="cfgMaxValue" value="100" min="1" step="1" />
-  </label><br />
-  <label>Valor mínimo (0%):<br />
-    <input type="number" id="cfgMinValue" value="0" step="1" />
-  </label><br />
-  <label>Modo de visualización:<br />
-    <select id="cfgDisplayMode">
-      <option value="percentage">Porcentaje</option>
-      <option value="value">Valor</option>
-    </select>
-  </label><br />
-  <label>Orientación:<br>
-  <select id="cfgOrientation">
-    <option value="vertical">Vertical</option>
-    <option value="horizontal">Horizontal</option>
-  </select>
-</label>
-</div>
- 
-
-    <!-- 🔘 Button-only fields -->
+    <h3>Configurar Widget</h3>
+    <label>Nombre:<br><input type="text" id="cfgNombre" /></label><br>
+    <label>IP:<br><input type="text" id="cfgIP" value="192.168.0.201" /></label><br>
+    <label>Puerto:<br><input type="text" id="cfgPuerto" value="502" /></label><br>
+    <label>Dirección:<br><input type="text" id="cfgDireccion" value="8192" /></label><br>
+    <label>Modo:<br><input type="text" id="cfgModo" value="pulse" /></label><br>
     <div id="buttonExtras" style="display: none; margin-top: 10px;">
       <label>Ancho del botón (px): <input type="number" id="cfgBtnWidth" min="50" max="600" value="120" /></label><br />
       <label>Alto del botón (px): <input type="number" id="cfgBtnHeight" min="30" max="300" value="40" /></label><br />
@@ -96,6 +23,221 @@
         </select>
       </label><br />
     </div>
+    <div id="indicatorExtras" style="display: none; margin-top: 10px;">
+      <label>Color de apagado:
+        <input type="color" id="cfgIndicatorColorOff" value="#888888" />
+      </label><br />
+      <label>Color de prendido:
+        <input type="color" id="cfgIndicatorColorOn" value="#ffff00" />
+      </label><br />
+      <label>Etiqueta:
+        <input type="text" id="cfgIndicatorLabel" value="Indicador" />
+      </label>
+    </div>
+    <div id="gaugeExtras" style="display: none; margin-top: 10px;">
+      <label>Color del gauge:<br />
+        <input type="color" id="cfgGaugeColor" value="#3498db" />
+      </label><br />
+      <label>Valor máximo (100%):<br />
+        <input type="number" id="cfgGaugeMaxValue" value="100" min="1" step="1" />
+      </label><br />
+      <label>Valor mínimo (0%):<br />
+        <input type="number" id="cfgGaugeMinValue" value="0" step="1" />
+      </label><br />
+      <label>Modo de visualización:<br />
+        <select id="cfgGaugeDisplayMode">
+          <option value="percentage">Porcentaje</option>
+          <option value="value">Valor</option>
+        </select>
+      </label><br />
+    </div>
+    <div id="levelExtras" style="display: none; margin-top: 10px;">
+      <label>Color de la barra:<br />
+        <input type="color" id="cfgBarColor" value="#3498db" />
+      </label><br />
+      <label>Valor máximo (100%):<br />
+        <input type="number" id="cfgMaxValue" value="100" min="1" step="1" />
+      </label><br />
+      <label>Valor mínimo (0%):<br />
+        <input type="number" id="cfgMinValue" value="0" step="1" />
+      </label><br />
+      <label>Modo de visualización:<br />
+        <select id="cfgDisplayMode">
+          <option value="percentage">Porcentaje</option>
+          <option value="value">Valor</option>
+        </select>
+      </label><br />
+      <label>Tamaño de palabra:<br>
+        <select id="cfgWordSize">
+          <option value="1">16 bits (1 palabra)</option>
+          <option value="2">32 bits (2 palabras)</option>
+        </select>
+      </label><br />
+      <label>Tipo de fuente:<br />
+        <select id="cfgSourceType">
+          <option value="register">Registro</option>
+          <option value="coil">Bobina</option>
+        </select>
+      </label><br />
+      <label>Orientación:<br>
+        <select id="cfgOrientation">
+          <option value="vertical">Vertical</option>
+          <option value="horizontal">Horizontal</option>
+        </select>
+      </label>
+    </div>
+  <div id="vectorExtras" style="display:none;">
+  <label for="cfgVectorType">Tipo de símbolo:</label>
+  <select id="cfgVectorType">
+    <option value="node">Nodo</option>
+    <option value="valve">Válvula</option>
+    <option value="divertor">Divertor</option>
+  </select>
+  <div id="vectorOrientationExtras" style="display:none; margin-top: 8px;">
+    <label for="cfgVectorOrientation">Orientación:</label>
+    <select id="cfgVectorOrientation">
+      <option value="horizontal">Horizontal</option>
+      <option value="vertical">Vertical</option>
+    </select>
+  </div>
+</div>
+    <div class="modal-buttons">
+      <button id="confirmConfig">✅ OK</button>
+      <button id="deleteButton">🗑️ Eliminar botón</button>
+      <button id="cancelConfig">❌ Cancelar</button>
+    </div>
+  </div>
+</div>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Control de Bobinas</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <script type="module" src="/static/Scrip.js" defer></script>
+</head>
+<body data-edit-mode="true">
+
+  <!-- Tab Bar -->
+  <div id="tab-bar" class="tab-bar">
+    <!-- Tabs will be injected here -->
+    <button id="new-page-btn" class="tab-new-btn">Nueva Página</button>
+  </div>
+
+  <!-- Sidebar Menu -->
+  <div id="menu">
+
+  <h3>Agregar botón</h3>
+  <div class="coil-item" draggable="true" data-type="button">Nuevo botón</div>
+  <div class="coil-item" draggable="true" data-type="indicator">Luz Indicadora</div>
+  <div class="coil-item" draggable="true" data-type="gauge">Medidor</div>
+  <div class="coil-item" draggable="true" data-type="level">Nivel</div>
+  <div class="coil-item" draggable="true" data-type="pipe-indicator">Elemento Placeholder</div>
+  <div class="coil-item" draggable="true" data-type="vector">Vector</div>
+  <button id="saveLayout" style="margin-top: 20px; width: 100%;">💾 Guardar Layout</button>
+  <button id="linkToUserBtn" style="margin-top: 10px; width: 100%; background: #4caf50; color: white;">🔗 Link to user</button>
+  <button id="unlinkFromUserBtn" style="margin-top: 10px; width: 100%; background: #e74c3c; color: white;">❌ Unlink from user</button>
+
+</div>
+
+<!-- Main Workspace & Title -->
+<h2>Automatrol SCADA System</h2>
+<div id="workspace">
+  <!-- Workspace content goes here -->
+  <div id="positionsPanel">
+    <h4>Posiciones de elementos:</h4>
+    <pre id="positionsText">(sin datos aún)</pre>
+  </div>
+</div>
+<div id="coilStatus">Estado: ...</div>
+
+</body>
+<script>
+</script>
+  </div>
+<div id="loggedInSection" style="margin-top:40px;text-align:center;color:#555;font-size:1.1em;"></div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var meta = document.querySelector('meta[name="current-username"]');
+  var username = meta ? meta.content : '';
+  if (username) {
+    document.getElementById('loggedInSection').textContent = 'Logged in as ' + username;
+  }
+});
+</script>
+  <!-- Modal for linking to user (moved inside body) -->
+  <div id="linkToUserModal" class="modal">
+    <div class="modal-content">
+      <span class="modal-close" id="close-link-user-modal">&times;</span>
+      <h3>Compartir con usuario</h3>
+      <input type="text" id="link-user-username" placeholder="Nombre de usuario del usuario" />
+      <button id="sendLinkRequestBtn">Enviar solicitud</button>
+      <div id="linkUserMsg" style="margin-top:10px;color:red;"></div>
+    </div>
+  </div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Show logged in user
+  var meta = document.querySelector('meta[name="current-username"]');
+  var username = meta ? meta.content : '';
+  if (username) {
+    document.getElementById('loggedInSection').textContent = 'Logged in as ' + username;
+  }
+
+  // Link to user modal logic
+  const linkBtn = document.getElementById('linkToUserBtn');
+  const modal = document.getElementById('linkToUserModal');
+  const closeModal = document.getElementById('close-link-user-modal');
+  const sendBtn = document.getElementById('sendLinkRequestBtn');
+  const userInput = document.getElementById('link-user-username');
+  const msg = document.getElementById('linkUserMsg');
+  if (linkBtn && modal && closeModal && sendBtn && userInput) {
+    linkBtn.onclick = () => { modal.classList.add('show'); userInput.value = ''; msg.textContent = ''; };
+    closeModal.onclick = () => { modal.classList.remove('show'); };
+    window.onclick = (e) => { if (e.target === modal) modal.classList.remove('show'); };
+    sendBtn.onclick = () => {
+      const username = userInput.value.trim();
+      if (!username) { msg.textContent = 'Por favor, escribe un nombre de usuario.'; return; }
+      fetch('/request-share', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ user: username })
+      })
+      .then(res => res.json())
+      .then(data => {
+        msg.style.color = data.status === 'ok' ? 'green' : 'red';
+        msg.textContent = data.message;
+        if (data.status === 'ok') setTimeout(() => { modal.classList.remove('show'); }, 1500);
+      })
+      .catch(() => { msg.textContent = 'Error de red.'; });
+    };
+  }
+
+  // Unlink from user logic
+  const unlinkBtn = document.getElementById('unlinkFromUserBtn');
+  if (unlinkBtn) {
+    unlinkBtn.onclick = function() {
+      const user = prompt('Escribe el nombre de usuario del usuario a desvincular:');
+      if (!user) return;
+      if (!confirm('¿Seguro que quieres desvincular la solicitud de este usuario?')) return;
+      fetch('/cancel-share', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ designer: null, user })
+      })
+        .then(res => res.json())
+        .then(data => {
+          alert(data.message);
+          // Optionally, clear the workspace area or reload to show blank layout
+          location.reload();
+        })
+        .catch(() => alert('Error al desvincular.'));
+    };
+  }
+});
+</script>
+</body>
+
 
     <!-- Action Buttons -->
     <div class="modal-buttons">
@@ -103,6 +245,15 @@
       <button id="deleteButton">🗑️ Eliminar botón</button>
       <button id="cancelConfig">❌ Cancelar</button>
     </div>
+  </div>
+</div>
+
+<div id="new-page-modal" class="modal">
+  <div class="modal-content">
+    <span class="modal-close" id="close-new-page-modal">&times;</span>
+    <h3>Nombre de página</h3>
+    <input type="text" id="page-name-input" placeholder="Escribe el nombre..." />
+    <button id="create-page-btn">Crear</button>
   </div>
 </div>
 

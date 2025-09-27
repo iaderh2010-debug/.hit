@@ -1,0 +1,461 @@
+{
+  "tabs": [
+    {
+      "name": "Página 1",
+      "id": "tab-1754760266003",
+      "content": [
+        {
+          "id": "widget-1757377493235-8717",
+          "type": "button",
+          "nombre": "ON",
+          "ip": "192.168.0.201",
+          "puerto": "502",
+          "direccion": "16385",
+          "modo": "pulse",
+          "bgColor": "#3498db",
+          "fontColor": "#ffffff",
+          "fontFamily": "Arial",
+          "width": "120",
+          "height": "40",
+          "posX": 91,
+          "posY": 92
+        },
+        {
+          "id": "widget-1757377504915-3858",
+          "type": "button",
+          "nombre": "OFF",
+          "ip": "192.168.0.201",
+          "puerto": "502",
+          "direccion": "16386",
+          "modo": "pulse",
+          "bgColor": "#3498db",
+          "fontColor": "#ffffff",
+          "fontFamily": "Arial",
+          "width": "120",
+          "height": "40",
+          "posX": 254,
+          "posY": 95
+        },
+        {
+          "id": "widget-1757792599683-208",
+          "type": "indicator",
+          "nombre": "Luz sin nombre",
+          "ip": "192.168.0.201",
+          "puerto": "502",
+          "direccion": "8192",
+          "colorOn": "#ffff00",
+          "colorOff": "#888888",
+          "posX": 45,
+          "posY": 346
+        },
+        {
+          "id": "widget-1757792647368-1215",
+          "type": "vector",
+          "nombre": "Vector",
+          "posX": 328,
+          "posY": 295
+        },
+        {
+          "id": "widget-1757792699018-9805",
+          "type": "indicator",
+          "nombre": "Luz sin nombre",
+          "ip": "192.168.0.201",
+          "puerto": "502",
+          "direccion": "8192",
+          "colorOn": "#ffff00",
+          "colorOff": "#888888",
+          "posX": 40,
+          "posY": 171
+        },
+        {
+          "id": "widget-1757792778578-7383",
+          "type": "vector",
+          "nombre": "Vector",
+          "posX": 852,
+          "posY": 543
+        },
+        {
+          "id": "widget-1757792790993-5579",
+          "type": "vector",
+          "nombre": "Vector",
+          "posX": 1047,
+          "posY": 163
+        },
+        {
+          "id": "widget-1757792794916-8507",
+          "type": "vector",
+          "nombre": "Vector",
+          "posX": 1013,
+          "posY": 562
+        },
+        {
+          "id": "widget-1757866113255-7239",
+          "type": "level",
+          "nombre": "Nivel sin nombre",
+          "ip": "192.168.0.201",
+          "puerto": "502",
+          "direccion": "8192",
+          "barColor": "#3498db",
+          "maxValue": "100",
+          "minValue": "0",
+          "displayMode": "percentage",
+          "sourceType": "register",
+          "orientation": "vertical",
+          "wordSize": "1",
+          "posX": 654,
+          "posY": 563
+        },
+        {
+          "id": "widget-1757866155394-9467",
+          "type": "level",
+          "nombre": "Nivel sin nombre",
+          "ip": "192.168.0.201",
+          "puerto": "502",
+          "direccion": "8192",
+          "barColor": "undefined",
+          "maxValue": "undefined",
+          "minValue": "undefined",
+          "displayMode": "undefined",
+          "sourceType": "undefined",
+          "orientation": "undefined",
+          "wordSize": "undefined",
+          "posX": 830,
+          "posY": 567
+        },
+        {
+          "id": "widget-1757866174669-5906",
+          "type": "level",
+          "nombre": "Nivel sin nombre",
+          "ip": "192.168.0.201",
+          "puerto": "502",
+          "direccion": "8192",
+          "barColor": "undefined",
+          "maxValue": "undefined",
+          "minValue": "undefined",
+          "displayMode": "undefined",
+          "sourceType": "undefined",
+          "orientation": "undefined",
+          "wordSize": "undefined",
+          "posX": 1007,
+          "posY": 573
+        },
+        {
+          "id": "widget-1757866217100-9055",
+          "type": "vector",
+          "nombre": "Vector",
+          "posX": 858,
+          "posY": 292
+        },
+        {
+          "id": "widget-1757867495836-6644",
+          "type": "vector",
+          "nombre": "Vector",
+          "posX": 326,
+          "posY": 364
+        },
+        {
+          "id": "widget-1758609980013-6732",
+          "type": "vector",
+          "nombre": "Vector",
+          "posX": 328,
+          "posY": 446
+        },
+        {
+          "id": "widget-1758609997273-448",
+          "type": "vector",
+          "nombre": "Vector",
+          "posX": 515,
+          "posY": 295
+        },
+        {
+          "id": "widget-1758610002437-6972",
+          "type": "vector",
+          "nombre": "Vector",
+          "posX": 516,
+          "posY": 444
+        },
+        {
+          "id": "widget-1758610019857-6461",
+          "type": "vector",
+          "nombre": "Vector",
+          "posX": 664,
+          "posY": 439
+        },
+        {
+          "id": "widget-1758610026074-1308",
+          "type": "vector",
+          "nombre": "Vector",
+          "posX": 654,
+          "posY": 558
+        },
+        {
+          "id": "widget-1757866247162-9916",
+          "type": "pipe-indicator",
+          "nombre": "",
+          "ip": "192.168.0.201",
+          "puerto": "502",
+          "direccion": "8192",
+          "colorOn": "#00bfff",
+          "colorOff": "#888888",
+          "posX": 813,
+          "posY": 609,
+          "pipeLength": 108.311,
+          "pipeAngle": -87.8873,
+          "connectedIds": [
+            "widget-1757866155394-9467",
+            "widget-1757792778578-7383"
+          ]
+        },
+        {
+          "id": "widget-1757866254482-8229",
+          "type": "pipe-indicator",
+          "nombre": "",
+          "ip": "192.168.0.201",
+          "puerto": "502",
+          "direccion": "8192",
+          "colorOn": "#00bfff",
+          "colorOff": "#888888",
+          "posX": 989,
+          "posY": 622,
+          "pipeLength": 95.972,
+          "pipeAngle": -97.1912,
+          "connectedIds": [
+            "widget-1757866174669-5906",
+            "widget-1757792794916-8507"
+          ]
+        },
+        {
+          "id": "widget-1757866264414-6153",
+          "type": "pipe-indicator",
+          "nombre": "",
+          "ip": "192.168.0.201",
+          "puerto": "502",
+          "direccion": "8192",
+          "colorOn": "#00bfff",
+          "colorOff": "#888888",
+          "posX": 847,
+          "posY": 375,
+          "pipeLength": 400.457,
+          "pipeAngle": 94.8719,
+          "connectedIds": [
+            "widget-1757792790993-5579",
+            "widget-1757792794916-8507"
+          ]
+        },
+        {
+          "id": "widget-1757866276381-4831",
+          "type": "pipe-indicator",
+          "nombre": "",
+          "ip": "192.168.0.201",
+          "puerto": "502",
+          "direccion": "8192",
+          "colorOn": "#00bfff",
+          "colorOff": "#888888",
+          "posX": 109,
+          "posY": 192,
+          "pipeLength": 955.474,
+          "pipeAngle": -2.02219,
+          "connectedIds": [
+            "widget-1757792699018-9805",
+            "widget-1757792790993-5579"
+          ]
+        },
+        {
+          "id": "widget-1757867502251-3154",
+          "type": "pipe-indicator",
+          "nombre": "",
+          "ip": "192.168.0.201",
+          "puerto": "502",
+          "direccion": "8192",
+          "colorOn": "#00bfff",
+          "colorOff": "#888888",
+          "posX": 115,
+          "posY": 380,
+          "pipeLength": 229.001,
+          "pipeAngle": -1.92898,
+          "connectedIds": [
+            "widget-1757792599683-208",
+            "widget-1757867495836-6644"
+          ]
+        },
+        {
+          "id": "widget-1757867508902-1216",
+          "type": "pipe-indicator",
+          "nombre": "",
+          "ip": "192.168.0.201",
+          "puerto": "502",
+          "direccion": "8192",
+          "colorOn": "#00bfff",
+          "colorOff": "#888888",
+          "posX": 310,
+          "posY": 342,
+          "pipeLength": 69.022,
+          "pipeAngle": -88.3424,
+          "connectedIds": [
+            "widget-1757867495836-6644",
+            "widget-1757792647368-1215"
+          ]
+        },
+        {
+          "id": "widget-1758609991129-5421",
+          "type": "pipe-indicator",
+          "nombre": "",
+          "ip": "192.168.0.201",
+          "puerto": "502",
+          "direccion": "8192",
+          "colorOn": "#00bfff",
+          "colorOff": "#888888",
+          "posX": 304,
+          "posY": 417,
+          "pipeLength": 82.0209,
+          "pipeAngle": 88.6052,
+          "connectedIds": [
+            "widget-1757867495836-6644",
+            "widget-1758609980013-6732"
+          ]
+        },
+        {
+          "id": "widget-1758610013539-1731",
+          "type": "pipe-indicator",
+          "nombre": "",
+          "ip": "192.168.0.201",
+          "puerto": "502",
+          "direccion": "8192",
+          "colorOn": "#00bfff",
+          "colorOff": "#888888",
+          "posX": 346,
+          "posY": 457,
+          "pipeLength": 188.014,
+          "pipeAngle": -0.608454,
+          "connectedIds": [
+            "widget-1758609980013-6732",
+            "widget-1758610002437-6972"
+          ]
+        },
+        {
+          "id": "widget-1758610017803-496",
+          "type": "pipe-indicator",
+          "nombre": "",
+          "ip": "192.168.0.201",
+          "puerto": "502",
+          "direccion": "8192",
+          "colorOn": "#00bfff",
+          "colorOff": "#888888",
+          "posX": 346,
+          "posY": 307,
+          "pipeLength": 187.014,
+          "pipeAngle": 0,
+          "connectedIds": [
+            "widget-1757792647368-1215",
+            "widget-1758609997273-448"
+          ]
+        },
+        {
+          "id": "widget-1758610036879-8559",
+          "type": "pipe-indicator",
+          "nombre": "",
+          "ip": "192.168.0.201",
+          "puerto": "502",
+          "direccion": "8192",
+          "colorOn": "#00bfff",
+          "colorOff": "#888888",
+          "posX": 533,
+          "posY": 306,
+          "pipeLength": 342.999,
+          "pipeAngle": -0.501718,
+          "connectedIds": [
+            "widget-1758609997273-448",
+            "widget-1757866217100-9055"
+          ]
+        },
+        {
+          "id": "widget-1758610040800-9224",
+          "type": "pipe-indicator",
+          "nombre": "",
+          "ip": "192.168.0.201",
+          "puerto": "502",
+          "direccion": "8192",
+          "colorOn": "#00bfff",
+          "colorOff": "#888888",
+          "posX": 747,
+          "posY": 430,
+          "pipeLength": 251.061,
+          "pipeAngle": 91.367,
+          "connectedIds": [
+            "widget-1757866217100-9055",
+            "widget-1757792778578-7383"
+          ]
+        },
+        {
+          "id": "widget-1758610047136-4802",
+          "type": "pipe-indicator",
+          "nombre": "",
+          "ip": "192.168.0.201",
+          "puerto": "502",
+          "direccion": "8192",
+          "colorOn": "#00bfff",
+          "colorOff": "#888888",
+          "posX": 534,
+          "posY": 454,
+          "pipeLength": 148.088,
+          "pipeAngle": -1.93489,
+          "connectedIds": [
+            "widget-1758610002437-6972",
+            "widget-1758610019857-6461"
+          ]
+        },
+        {
+          "id": "widget-1758610060502-9649",
+          "type": "pipe-indicator",
+          "nombre": "",
+          "ip": "192.168.0.201",
+          "puerto": "502",
+          "direccion": "8192",
+          "colorOn": "#00bfff",
+          "colorOff": "#888888",
+          "posX": 617,
+          "posY": 511,
+          "pipeLength": 119.413,
+          "pipeAngle": 94.8038,
+          "connectedIds": [
+            "widget-1758610019857-6461",
+            "widget-1758610026074-1308"
+          ]
+        },
+        {
+          "id": "widget-1758610066942-5887",
+          "type": "pipe-indicator",
+          "nombre": "",
+          "ip": "192.168.0.201",
+          "puerto": "502",
+          "direccion": "8192",
+          "colorOn": "#00bfff",
+          "colorOff": "#888888",
+          "posX": 635,
+          "posY": 615,
+          "pipeLength": 91.0256,
+          "pipeAngle": 78.5926,
+          "connectedIds": [
+            "widget-1758610026074-1308",
+            "widget-1757866113255-7239"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "123",
+      "id": "tab-1755039065515",
+      "content": []
+    },
+    {
+      "name": "456",
+      "id": "tab-1758608576444",
+      "content": []
+    },
+    {
+      "name": "789",
+      "id": "tab-1758608587380",
+      "content": []
+    }
+  ]
+}

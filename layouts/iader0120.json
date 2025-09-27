@@ -1,0 +1,41 @@
+{
+  "tabs": [
+    {
+      "name": "Página 1",
+      "id": "tab-1754766395865",
+      "content": [
+        {
+          "id": "widget-1754766403720-7688",
+          "type": "button",
+          "nombre": "ON",
+          "ip": "192.168.0.201",
+          "puerto": "502",
+          "direccion": "16385",
+          "modo": "pulse",
+          "bgColor": "#3498db",
+          "fontColor": "#ffffff",
+          "fontFamily": "Arial",
+          "width": "120",
+          "height": "40",
+          "posX": 332,
+          "posY": 129
+        },
+        {
+          "id": "widget-1754766507543-6050",
+          "type": "gauge",
+          "nombre": "Medidor sin nombre",
+          "ip": "192.168.0.201",
+          "puerto": "502",
+          "direccion": "8193",
+          "gaugeColor": "#3498db",
+          "maxValue": "100",
+          "minValue": "0",
+          "displayMode": "percentage",
+          "wordSize": "2",
+          "posX": 533,
+          "posY": 110
+        }
+      ]
+    }
+  ]
+}

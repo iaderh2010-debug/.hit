@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head><title>Login as User</title></head>
+<body>
+  <h2>Iniciar Sesión como Usuario</h2>
+  <form method="POST" action="/loginuser">
+    <label>Usuario: <input type="text" name="username" required></label><br>
+    <label>Contraseña: <input type="password" name="password" required></label><br>
+    <button type="submit">Entrar como Usuario</button>
+  </form>
+  <a href="/signupuser.html">¿No tienes cuenta? Regístrate</a><br><br>
+  <button onclick="window.location.href='/login.html'" type="button">Iniciar Sesión como Diseñador</button>
+</body>
+</html>

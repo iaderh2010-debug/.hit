@@ -75,7 +75,7 @@ def save_layout():
     data = request.get_json()
     with open(LAYOUT_FILE, 'w') as f:
         json.dump(data.get('layout', []), f)
-    return jsonify({'status': 'ok'})
+    return jsonify({'status': 'ok'}), 200
 
 @app.route('/get-layout')
 def get_layout():
